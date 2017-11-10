@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  interactivestories.api.ci-build:
+    image: microsoft/aspnetcore-build:1.0-2.0
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet restore ./InteractiveStories.API && dotnet publish ./InteractiveStories.API -c Release -o ./obj/Docker/publish"
+
+  interactivestories.identityprovider.ci-build:
+    image: microsoft/aspnetcore-build:1.0-2.0
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet restore ./InteractiveStories.IdentityProvider && dotnet publish ./InteractiveStories.IdentityProvider -c Release -o ./obj/Docker/publish"

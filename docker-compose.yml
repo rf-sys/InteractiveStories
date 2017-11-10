@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  interactivestories.api:
+    image: cleverices/interactivestories.api
+    build:
+      context: ./InteractiveStories.API
+      dockerfile: Dockerfile
+
+  interactivestories.identityprovider:
+    image: cleverices/interactivestories.identityprovider
+    build:
+      context: ./InteractiveStories.IdentityProvider
+      dockerfile: Dockerfile
+
+  interactivestories.client:
+    image: cleverices/interactivestories.client
+    build:
+      context: ./InteractiveStories.Client
+      dockerfile: Dockerfile

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  interactivestories.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001:80"
+
+  interactivestories.identityprovider:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+
+  interactivestories.client:
+    ports:
+      - "5003:4200"
