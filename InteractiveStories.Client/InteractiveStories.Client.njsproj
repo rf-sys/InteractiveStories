@@ -77,6 +77,7 @@
     <Folder Include="src\environments\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="karma.conf.prod.js" />
     <Compile Include="karma.conf.js" />
     <Compile Include="protractor.conf.js" />
     <Compile Include="webpack.server.config.js" />
