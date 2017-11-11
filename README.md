@@ -1,4 +1,6 @@
 # InteractiveStories
+![](https://rodionfedorov.visualstudio.com/_apis/public/build/definitions/446c0345-6d55-4ebf-a9b4-43f55e58d199/19/badge)
+
 Experimental project. Main goal - implementing service-based/microservices approach of developing web-applications with 
 ASP.NET Core and Angular.
 
