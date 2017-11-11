@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "InteractiveStories.Client", "InteractiveStories.Client\InteractiveStories.Client.njsproj", "{F258A910-A25D-40A7-8050-F28379B2D431}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveStories.API.Tests", "InteractiveStories.API.Tests\InteractiveStories.API.Tests.csproj", "{5855B702-4D78-4F8C-80E5-EA9BE0CE4470}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveStories.IdentityProvider.Tests", "InteractiveStories.IdentityProvider.Tests\InteractiveStories.IdentityProvider.Tests.csproj", "{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{F258A910-A25D-40A7-8050-F28379B2D431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F258A910-A25D-40A7-8050-F28379B2D431}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F258A910-A25D-40A7-8050-F28379B2D431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5855B702-4D78-4F8C-80E5-EA9BE0CE4470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5855B702-4D78-4F8C-80E5-EA9BE0CE4470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5855B702-4D78-4F8C-80E5-EA9BE0CE4470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5855B702-4D78-4F8C-80E5-EA9BE0CE4470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
