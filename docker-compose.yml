@@ -6,15 +6,36 @@ services:
     build:
       context: ./InteractiveStories.API
       dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+    depends_on:
+      - interactivestories.dbinitializer
 
   interactivestories.identityprovider:
     image: cleverices/interactivestories.identityprovider
     build:
       context: ./InteractiveStories.IdentityProvider
       dockerfile: Dockerfile
+    ports:
+      - "5000:80"
 
   interactivestories.client:
     image: cleverices/interactivestories.client
     build:
       context: ./InteractiveStories.Client
       dockerfile: Dockerfile
+    ports:
+      - "5003:4200"
+  
+  interactivestories.db:
+    image: postgres
+    ports:
+      - "5432:5432"
+
+  interactivestories.dbinitializer:
+    image: cleverices/interactivestories.dbinitializer
+    build:
+      context: ./InteractiveStories.Infrastructure
+      dockerfile: Dockerfile
+    depends_on:
+      - interactivestories.db

@@ -24,6 +24,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveStories.API.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveStories.IdentityProvider.Tests", "InteractiveStories.IdentityProvider.Tests\InteractiveStories.IdentityProvider.Tests.csproj", "{B1186B0C-F959-4B61-B00B-F5ADF6A2F831}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{9781117A-3C18-451F-A293-80C0252913AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "production", "production", "{6B853006-33C4-439D-956D-CD4CCD3756C1}"
+ProjectSection(SolutionItems) = preProject
+	k8s\production\api.yaml = k8s\production\api.yaml
+	k8s\production\client.yaml = k8s\production\client.yaml
+	k8s\production\identity.yaml = k8s\production\identity.yaml
+	k8s\production\ingress.yaml = k8s\production\ingress.yaml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +70,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3AE848F-8378-47E0-8CC8-2B60048827A9}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9781117A-3C18-451F-A293-80C0252913AF} = {28E82780-F89D-46D4-BBD4-E19BE3407CB6}
+		{6B853006-33C4-439D-956D-CD4CCD3756C1} = {9781117A-3C18-451F-A293-80C0252913AF}
 	EndGlobalSection
 EndGlobal

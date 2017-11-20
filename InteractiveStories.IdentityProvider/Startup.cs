@@ -32,8 +32,8 @@ namespace InteractiveStories.IdentityProvider
             var migrationsAssembly = typeof(InfrastructureEntry).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"),
+                options.UseNpgsql(
+                    Configuration["DatabaseConnection"],
                     sql => sql.MigrationsAssembly(migrationsAssembly)
                 ));
 

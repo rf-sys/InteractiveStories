@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: global-ingress
+spec:
+  tls:
+  - secretName: tls-secret
+  rules:
+  - host: teachbot.info
+    http:
+      paths:
+      - backend:
+          serviceName: client-service
+          servicePort: 4200
+  - host: api.teachbot.info
+    http:
+      paths:
+      - backend:
+          serviceName: api-service
+          servicePort: 5001
+  - host: identity.teachbot.info
+    http:
+      paths:
+      - backend:
+          serviceName: identity-service
+          servicePort: 5000

@@ -23,7 +23,7 @@ namespace InteractiveStories.Infrastructure.Data
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             var configBuilder = new Config();
 
-            optionsBuilder.UseSqlServer(configBuilder.Configuration["ConnectionStrings:DatabaseConnection"]);
+            optionsBuilder.UseNpgsql(configBuilder.Configuration["DatabaseConnection"]);
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

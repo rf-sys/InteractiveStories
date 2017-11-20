@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dbinitializer-job
+spec:
+  template:
+    metadata:
+      name: dbinitializer
+    spec:
+      containers:
+      - name: dbinitializer
+        image: cleverices/interactivestories.dbinitializer
+        env:
+        - name: DatabaseConnection
+          value: User ID=postgres;Password=123456abc;Host=database-service;Port=5432;Database=interactivestories;Pooling=true;
+      restartPolicy: Never
+  backoffLimit: 3

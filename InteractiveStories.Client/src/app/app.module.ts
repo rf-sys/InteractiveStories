@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'interactivestories.client' })
+    BrowserModule.withServerTransition({ appId: 'interactivestories.client' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

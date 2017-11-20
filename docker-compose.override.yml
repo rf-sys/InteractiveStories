@@ -1,18 +1,21 @@
+# this file is intended to be used to set docker-specific environment variables for projects
+# in development mode 
 version: '3'
 
 services:
   interactivestories.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "5001:80"
+      - ConnectionStrings:DatabaseConnection="Server=interactivestories.db;Database=InteractiveStories;Trusted_Connection=True;MultipleActiveResultSets=true"
 
   interactivestories.identityprovider:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "5000:80"
 
-  interactivestories.client:
-    ports:
-      - "5003:4200"
+  interactivestories.db:
+    environment:
+      - POSTGRES_PASSWORD=123456abc
+
+  interactivestories.dbinitializer:
+    environment:
+      DatabaseConnection: User ID=postgres;Password=123456abc;Host=interactivestories.db;Port=5432;Database=interactivestories;Pooling=true;

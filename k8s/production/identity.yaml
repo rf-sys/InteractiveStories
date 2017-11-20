@@ -1,0 +1,57 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: identity-deployment
+  #labels:
+  #  app: client-deployment
+spec:
+  replicas: 1
+  # selector defines how we manage to find pods for deployment
+  # In our case we simply select pods with label "app: nginx"
+  selector:
+    matchLabels:
+      app: identity
+  # describe our pods
+  template:
+    # set up pod with label "app: nginx"
+    metadata:
+      labels:
+        app: identity
+    # describe the "content" of the pod: what container to run
+    # and container settings
+    spec:
+      containers:
+      - name: identityprovider
+        image: cleverices/interactivestories.identityprovider
+        ports:
+        - containerPort: 80
+        env:
+        - name: DatabaseConnection
+          value: User ID=postgres;Password=123456abc;Host=database-service;Port=5432;Database=interactivestories;Pooling=true;
+---
+kind: Service
+apiVersion: v1
+metadata:
+  # set service name and label
+  # also name will be DNS name of the service
+  name: identity-service
+  #labels:
+  #  app: client-service
+spec:
+  # ClusterIP (default) - stable IP inside the cluster - we cannot connect to service from the outside world
+  # NodePort - takes cluster IP and adds a cluster-wide port to expose service to the outside the cluster
+  # LoadBalancer - adds abstraction around NodePort to integrate NodePort with cloud load balancer
+  type: NodePort
+  # Defines how we match pods to service. In our case - map to service pods with label "app: nginx"
+  selector:
+    app: identity
+  ports:
+  - protocol: TCP
+    # expose specified port of the containers, running inside each pod of the service
+    # bind to cluster-wide port
+    port: 5000
+    # manually set pod's port to expose (by default equals "port")
+    # For example, suppose you have a set of Pods that each expose port 80.
+    # As pods of this service includes nginx, which maps 80 port inside pod, hence we select this port in pod to expose outside
+    # through service.
+    targetPort: 80
