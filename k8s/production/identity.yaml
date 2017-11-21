@@ -28,6 +28,12 @@ spec:
         env:
         - name: DatabaseConnection
           value: User ID=postgres;Password=123456abc;Host=database-service;Port=5432;Database=interactivestories;Pooling=true;
+      initContainers:
+      - name: dbinitializer
+        image: cleverices/interactivestories.dbinitializer
+        env:
+        - name: DatabaseConnection
+          value: User ID=postgres;Password=123456abc;Host=database-service;Port=5432;Database=interactivestories;Pooling=true;
 ---
 kind: Service
 apiVersion: v1
